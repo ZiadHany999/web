@@ -1,0 +1,315 @@
+/* ===== الأساسيات ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== الهيدر ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 10vw;
+  background: rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a.active {
+  border-bottom: 0.2rem solid rgb(255, 255, 255);
+}
+
+/* ===== الهيرو / عني ===== */
+.hero, .about-content, .famous-people {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 5vw;
+}
+
+.hero img, .about-content img {
+  width: 20vw;
+  max-width: 250px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 0.4rem solid white;
+  margin-bottom: 1rem;
+}
+
+.hero h1, .about-content h1, .famous-people h1 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  margin: 0.5rem 0;
+}
+
+.hero p, .about-content p, .famous-people p {
+  font-size: 1rem;
+  max-width: 90%;
+  line-height: 1.6;
+}
+
+/* ===== الأقسام ===== */
+section {
+  flex: 1;
+  padding: 3rem 5vw;
+  max-width: 900px;
+  margin: auto;
+}
+
+section h1 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+section h2 {
+  margin-top: 2rem;
+  color: #b9db6b;
+}
+
+/* ===== السلايدر ===== */
+.slider {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  aspect-ratio: 4/7;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 2rem;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+  height: 100%;
+}
+
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+  flex-shrink: 0;
+}
+
+.slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background 0.3s;
+  z-index: 5;
+}
+
+.slider button:hover {
+  background: rgba(0,0,0,0.9);
+}
+
+.slider .prev { left: 1vw; }
+.slider .next { right: 1vw; }
+
+.slides img.current {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 4vw 1.5vw rgba(255, 255, 255, 1),
+    0 0 8vw 3vw rgba(185, 219, 107, 0.9);
+}
+
+/* ===== زرار memorable moments ===== */
+.memorable-btn .btn {
+  display: inline-block;
+  padding: 0.5rem 10vw;
+  background: #b9db6b;
+  margin-top: 1rem;      /* ينزل الزر تحت شويه */
+  color: black;
+  border-radius: 300px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.memorable-btn .btn:hover {
+  background: #9ac142;
+}
+
+
+
+
+
+
+/* الفيديو */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2; /* تحت كل العناصر */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: -1; /* فوق الفيديو وتحت المحتوى */
+}
+
+
+
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+
+
+/* ===== Media Queries للشاشات الصغيرة ===== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;             /* خليه أفقي بدل العمودي */
+    justify-content: space-between;  /* المسافة بين Navbar و Dropdown */
+    align-items: center;
+    padding: 1rem 4vw;               /* تقليل البادينج */
+    background: rgba(0, 0, 0, 0.5);  /* اللون الأزرق الشفاف */
+    flex-wrap: wrap;                  /* يسمح بالالتفاف لو الشاشة ضيقة */
+  }
+
+
+
+
+
+
+  @media (max-width: 768px) {
+    body, h1, h2, p {
+      font-size: 1rem; /* حجم الخط الأساسي للموبايل */
+    }
+  
+    h1 {
+      font-size: clamp(1.5rem, 5vw, 2rem); /* حجم العناوين على الموبايل */
+    }
+  
+    h2 {
+      font-size: clamp(1rem, 2vw, 1.rem);
+    }
+  
+    p {
+      font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  nav {
+    flex-direction: row;              /* الروابط جنب بعض */
+    flex-wrap: wrap;                  /* لو ضاقت الشاشة تتحرك سطر ثاني */
+    justify-content: center;
+    margin: 0;
+  }
+
+  nav a {
+    margin: 0.1rem 0.3rem;            /* تقليل المسافات بين الروابط */
+    font-size: 0.5rem;
+  }
+
+  .hero img, .about-content img {
+    width: 40vw;
+    max-width: 200px;
+    border-width: 0.3rem;
+  }
+
+  .hero h1, .about-content h1, .famous-people h1 {
+    font-size: clamp(1.2rem, 6vw, 2rem);
+  }
+
+  .hero p, .about-content p, .famous-people p {
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 2rem 5vw;
+  }
+
+  .slider {
+    width: 95%;
+    max-width: 300px;
+  }
+
+ 
+  @media (max-width: 768px) {
+    .memorable-btn .btn {
+      padding: 0.2rem 9vw; /* تقليل العرض horizontal */
+      font-size: 0.7rem;   /* تصغير الخط */
+      margin-top: 1rem;      /* ينزل الزر تحت شويه */
+
+    }
+  }
+  
+
+
+}

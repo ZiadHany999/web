@@ -1,0 +1,157 @@
+/* ===== الأساسيات ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== الهيدر ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 10vw; /* بديل px */
+  background: rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+/* ===== ناف بار ===== */
+nav {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  flex-wrap: wrap; /* يسمح بالتفاف الروابط على شاشات صغيرة */
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a.active {
+  border-bottom: 0.2rem solid rgb(255, 255, 255);
+}
+
+/* ===== الهيرو ===== */
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 5vw;
+}
+
+.hero img {
+  width: 20vw; /* بديل px */
+  max-width: 250px;
+  aspect-ratio: 1/1; /* يحافظ على الشكل الدائري */
+  border-radius: 50%;
+  border: 0.4rem solid white;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: 3vw; /* بديل px */
+  max-font-size: 2.5rem; /* الحد الأقصى للكمبيوتر */
+  margin: 0.5rem 0;
+}
+
+.hero p {
+  font-size: 1rem;
+  max-width: 90%;
+  line-height: 1.6;
+}
+
+/* ===== الأقسام ===== */
+section {
+  flex: 1;
+  padding: 3rem 5vw;
+  max-width: 900px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 5vw; /* بديل px */
+  max-font-size: 30rem; /* للكمبيوتر */
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ===== الفوتر ===== */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* ===== Media Queries للشاشات الصغيرة ===== */
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;             /* خليه أفقي بدل العمودي */
+    justify-content: space-between;  /* المسافة بين Navbar و Dropdown */
+    align-items: center;
+    padding: 1rem 4vw;               /* تقليل البادينج */
+    background: rgba(0, 0, 0, 0.5);  /* اللون الأزرق الشفاف */
+    flex-wrap: wrap;                  /* يسمح بالالتفاف لو الشاشة ضيقة */
+  }
+
+  nav {
+    flex-direction: row;              /* الروابط جنب بعض */
+    flex-wrap: wrap;                  /* لو ضاقت الشاشة تتحرك سطر ثاني */
+    justify-content: center;
+    margin: 0;
+  }
+
+  nav a {
+    margin: 0.1rem 0.3rem;            /* تقليل المسافات بين الروابط */
+    font-size: 0.5rem;
+  }
+
+  .language-switcher {
+    margin-left: 0.5rem;              /* مسافة بسيطة عن الروابط */
+  }
+
+
+
+
+  .hero img {
+    width: 40vw;
+    max-width: 200px;
+    border-width: 0.3rem;
+  }
+
+  .hero h1 {
+    font-size: 6vw;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 2rem 5vw;
+  }
+}
